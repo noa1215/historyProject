@@ -1,0 +1,328 @@
+:root {
+    color-scheme: light;
+    --ink: #202b38;
+    --muted: #536171;
+    --paper: #f4f2ed;
+    --surface: #ffffff;
+    --navy: #172536;
+    --navy-soft: #26384c;
+    --gold: #e5bd68;
+    --line: #d9d5cc;
+    --focus: #a34827;
+    --shadow: 0 14px 36px rgb(23 37 54 / 8%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 1.5rem;
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Arial, "Noto Sans Hebrew", sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.8;
+}
+
+body > header {
+    padding: clamp(2rem, 6vw, 4.5rem) max(1.25rem, calc((100% - 1120px) / 2));
+    background: var(--navy);
+    color: #fff;
+    border-bottom: 5px solid var(--gold);
+}
+
+body > header h1 {
+    margin: 0;
+    color: var(--gold);
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+}
+
+body > header h2 {
+    margin: 0.6rem 0 1.75rem;
+    color: #f4f2ed;
+    font-size: clamp(1.15rem, 2.5vw, 1.55rem);
+    font-weight: 400;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body > header nav a {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    padding: 0.45rem 0.95rem;
+    border: 1px solid #526174;
+    border-radius: 999px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 160ms ease, border-color 160ms ease;
+}
+
+body > header nav a:hover {
+    border-color: var(--gold);
+    background: var(--navy-soft);
+}
+
+body > nav {
+    width: min(1120px, calc(100% - 2.5rem));
+    margin: 1.5rem auto;
+    padding: 1.15rem 1.4rem;
+    border: 1px solid var(--line);
+    border-right: 4px solid var(--gold);
+    border-radius: 0.75rem;
+    background: var(--surface);
+}
+
+body > nav h3 {
+    margin: 0 0 0.55rem;
+    color: var(--navy);
+    font-size: 1rem;
+}
+
+body > nav a,
+main a {
+    color: #244c69;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+}
+
+body > nav a:hover,
+main a:hover {
+    color: #713b20;
+}
+
+body > hr {
+    width: min(1120px, calc(100% - 2.5rem));
+    margin: 1.5rem auto;
+    border: 0;
+    border-top: 1px solid var(--line);
+}
+
+main {
+    width: min(1120px, calc(100% - 2.5rem));
+    margin: 2rem auto 3rem;
+}
+
+main > a[href^="#"] {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    padding: 0.4rem 1rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--surface);
+    font-weight: 700;
+}
+
+main > article,
+main > section {
+    margin: 1.5rem 0;
+    padding: clamp(1.25rem, 3vw, 2rem);
+    border: 1px solid var(--line);
+    border-radius: 1rem;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+main > article {
+    border-top: 4px solid var(--gold);
+}
+
+main section > h2 {
+    margin: 0 0 1rem;
+    color: var(--navy);
+    font-size: clamp(1.45rem, 3vw, 2rem);
+    line-height: 1.35;
+}
+
+main article h3,
+main section > h3 {
+    color: var(--navy);
+}
+
+main p {
+    max-width: 78ch;
+}
+
+blockquote {
+    margin: 1.5rem 0;
+    padding: 1rem 1.25rem;
+    border-right: 4px solid var(--gold);
+    border-radius: 0.4rem;
+    background: #f7f4eb;
+    color: #354355;
+    font-size: 1.08rem;
+}
+
+figure {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+    gap: 0.85rem;
+    margin: 1.5rem 0 0;
+    padding: 0.85rem;
+    border: 1px solid var(--line);
+    border-radius: 0.8rem;
+    background: #f8f7f4;
+}
+
+figure img,
+#image-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 480px;
+    border-radius: 0.5rem;
+    object-fit: cover;
+}
+
+figcaption {
+    grid-column: 1 / -1;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+#image-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+#image-container img,
+#image-container video {
+    width: 100%;
+    height: auto;
+    max-height: 520px;
+    border: 1px solid var(--line);
+    border-radius: 0.8rem;
+    background: var(--navy);
+    object-fit: cover;
+}
+
+iframe,
+audio {
+    display: block;
+    max-width: 100%;
+    margin: 1rem 0;
+}
+
+iframe {
+    width: min(100%, 600px);
+    border: 1px solid var(--line) !important;
+    border-radius: 0.75rem;
+}
+
+audio {
+    width: min(100%, 520px);
+}
+
+details {
+    margin: 0.75rem 0;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--line);
+    border-radius: 0.65rem;
+    background: #fbfaf7;
+}
+
+summary {
+    min-height: 44px;
+    color: var(--navy);
+    cursor: pointer;
+    font-weight: 700;
+}
+
+details[open] summary {
+    margin-bottom: 0.5rem;
+    color: #713b20;
+}
+
+body > aside {
+    width: min(1120px, calc(100% - 2.5rem));
+    margin: 0 auto 3rem;
+    padding: 1.25rem 1.5rem;
+    border-right: 4px solid var(--gold);
+    border-radius: 0.75rem;
+    background: var(--navy-soft);
+    color: #fff;
+}
+
+body > aside h3 {
+    margin: 0 0 0.3rem;
+    color: var(--gold);
+}
+
+body > aside p {
+    margin: 0;
+}
+
+body > footer {
+    padding: 1.5rem;
+    background: var(--navy);
+    color: #e5e9ee;
+    text-align: center;
+}
+
+body > footer hr {
+    width: min(1120px, 100%);
+    margin: 0 auto 1rem;
+    border: 0;
+    border-top: 1px solid #526174;
+}
+
+body > footer p {
+    margin: 0;
+}
+
+:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+}
+
+body > header :focus-visible,
+body > footer :focus-visible,
+body > aside :focus-visible {
+    outline-color: var(--gold);
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 1rem;
+    }
+
+    body > header nav a {
+        width: 100%;
+    }
+
+    nav ul {
+        gap: 0.5rem;
+    }
+
+    main {
+        margin-top: 1.25rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
